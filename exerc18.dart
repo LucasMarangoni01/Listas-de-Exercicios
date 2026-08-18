@@ -10,4 +10,7 @@ void main() {
 
   var rendimento = valor * (juros/100);
   var total = valor + rendimento;
+
+  print('Valor do rendimento: ${rendimento}');
+  print('Valor total : ${total}');
 }

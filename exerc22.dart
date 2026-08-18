@@ -1,0 +1,50 @@
+import 'dart:io';
+import 'dart:math';
+
+void main() {
+  // 1. Pede o coeficiente A primeiro para validar a regra de interrupção
+  print('Digite o coeficiente A:');
+  double coeficientes_a = double.parse(stdin.readLineSync() ?? "0");
+
+  // Regra: Se A for igual a 0, encerra imediatamente sem pedir o resto
+  if (coeficientes_a == 0) {
+    print('Equação deixa de ser do 2º grau. Programa encerrado.');
+    exit(0); // Fecha o programa imediatamente
+  }
+
+  // 2. Pede os demais coeficientes se "A" for válido
+  print('Digite o coeficiente B:');
+  double coeficientes_b = double.parse(stdin.readLineSync() ?? "0");
+
+  print('Digite o coeficiente C:');
+  double coeficientes_c = double.parse(stdin.readLineSync() ?? "0");
+
+  // 3. Classificação da equação
+  if (coeficientes_b != 0 && coeficientes_c != 0) {
+    print("Equação completa");
+  } else {
+    print('Classificada como incompleta');
+  }
+
+  // 4. Cálculo do Delta
+  double delta = (coeficientes_b * coeficientes_b) - (4 * coeficientes_a * coeficientes_c);
+  print('Delta calculado: $delta');
+
+  // 5. Validação das raízes com base no Delta
+  if (delta < 0) {
+    print('A equação não possui raízes reais.');
+    exit(0); // Encerra o programa
+  } 
+  else if (delta == 0) {
+    double x = -coeficientes_b / (2 * coeficientes_a);
+    print('Equação possui apenas uma raiz real:');
+    print('x = $x');
+  } 
+  else {
+    double x1 = (-coeficientes_b + sqrt(delta)) / (2 * coeficientes_a);
+    double x2 = (-coeficientes_b - sqrt(delta)) / (2 * coeficientes_a);
+    print('A equação possui duas raízes reais:');
+    print('x1 = $x1');
+    print('x2 = $x2');
+  }
+}
