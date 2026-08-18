@@ -9,7 +9,7 @@ void main() {
     print('Número muito alto, número 99 pra baixo ');
   }
   else{
-    print('');
+    
   }
 }
 
