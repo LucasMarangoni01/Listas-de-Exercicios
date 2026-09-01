@@ -44,7 +44,7 @@ void main() {
   ];
 
   if (num < 0 || num > 99) {
-    print('Número inválido!');
+    print('Número inválido. Tente novamente!');
   } else if (num < 10) {
     print(iniciais[num]);
   } else if (num < 20) {
