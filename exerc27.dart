@@ -12,6 +12,6 @@ void main() {
 
     int prox = pri_num + seg_num;
     pri_num = seg_num;
-    seg_num = prox  ;
+    seg_num = prox;
   }
 }
